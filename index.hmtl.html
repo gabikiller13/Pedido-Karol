@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Convite Especial</title>
+  <style>
+    body {
+      background-color: pink;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #simButton {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: green;
+      color: white;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    #naoButton {
+      position: absolute;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>QUER SAIR COMIGO?</h1>
+  <button id="simButton" onclick="redirectToLink()">Sim</button>
+  <button id="naoButton" onclick="changeNaoButtonPosition()">Não</button>
+
+  <script>
+    function redirectToLink() {
+      window.location.href = 'https://www.youtube.com/watch?v=yyfCPyQR-SE&pp=ygUGbmF0dGFu';
+    }
+
+    function changeNaoButtonPosition() {
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+      const naoButton = document.getElementById('naoButton');
+
+      const randomX = Math.random() * (screenWidth - naoButton.offsetWidth);
+      const randomY = Math.random() * (screenHeight - naoButton.offsetHeight);
+
+      naoButton.style.left = randomX + 'px';
+      naoButton.style.top = randomY + 'px';
+    }
+  </script>
+</body>
+</html>
+
